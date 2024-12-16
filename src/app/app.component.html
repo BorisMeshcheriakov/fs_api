@@ -1,0 +1,13 @@
+<h1>Json editor</h1>
+
+<button (click)="openDirectory()">Open Directory</button>
+<ul>
+  <li *ngFor="let file of fileList">
+    <a href="#" (click)="openFile(file)">{{ file.name }}</a>
+  </li>
+</ul>
+<div *ngIf="selectedFileName">
+  <h3>Editing: {{ selectedFileName }}</h3>
+  <textarea [(ngModel)]="fileContent" rows="10" cols="50"></textarea>
+  <button (click)="saveFile()">Save File</button>
+</div>
